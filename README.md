@@ -1,36 +1,50 @@
-# TanStack Start - Basic Example
+# Struct UI
 
-This is the basic TanStack Start example, demonstrating the fundamentals of building applications with TanStack Router and TanStack Start.
+> Production-ready, high-density data layouts (Dashboards, Settings, Auth) specifically for the TanStack ecosystem.
 
-- [TanStack Router Docs](https://tanstack.com/router)
+## Project Definition
 
-It's deployed automagically with Netlify!
+**Struct UI** is an Open Source UI Kit / Boilerplate designed for developers building complex B2B SaaS applications. We prioritize type-safety, headless logic, and performance over generic visual components.
 
-- [Netlify](https://netlify.com/)
+**Philosophy:** "TanStack First". We leverage the bleeding-edge TanStack ecosystem to provide a premium starting point for UI that gives you control over the logic.
 
-## Start a new project based on this example
+**Target Audience:** Developers who need high-density interfaces and full control over their application logic.
 
-To start a new project based on this example, run:
+## The Tech Stack (Strict)
 
-```sh
-npx gitpick TanStack/router/tree/main/examples/react/start-basic start-basic
+We are fully committed to the TanStack ecosystem. Next.js is explicitly avoided in favor of TanStack Start.
+
+- **Framework:** [TanStack Start](https://tanstack.com/start) (SSR, Server Functions)
+- **Routing:** [TanStack Router](https://tanstack.com/router) (File-based routing, Type-safe search params, Loaders)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) + [Base UI](https://base-ui.com/) (Headless components)
+- **State/Data Fetching:** [TanStack Query](https://tanstack.com/query) (Integrated via Router loaders)
+- **Forms:** [TanStack Form](https://tanstack.com/form) (Headless validation and state)
+- **Data Display:** [TanStack Table](https://tanstack.com/table) + [TanStack Virtual](https://tanstack.com/virtual)
+- **Language:** TypeScript (Strict mode)
+- **Validation:** [Zod](https://zod.dev/)
+
+## Monorepo Structure
+
+This project is a monorepo managed with `pnpm`.
+
+```
+/
+├── templates/
+│   └── starter/    # The main dashboard starter template
+└── package.json
 ```
 
 ## Getting Started
 
-From your terminal:
+To install dependencies:
 
 ```sh
 pnpm install
-pnpm dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Build
-
-To build the app for production:
+To run the starter template:
 
 ```sh
-pnpm build
+cd templates/starter
+pnpm dev
 ```
