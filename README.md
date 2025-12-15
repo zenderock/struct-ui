@@ -48,3 +48,12 @@ To run the starter template:
 cd templates/starter
 pnpm dev
 ```
+
+## Templates Catalogue
+
+| Template | Description | Live Demo | Source Code | Key Features |
+| :--- | :--- | :---: | :---: | :--- |
+| **Portfolio 01** <br> *(Sentrix)* | Sleek, motion-driven portfolio with AI terminal. | [Demo](https://struct-ui-portfolio-01.vercel.app) | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/portfolio-01) | GSAP, Lenis, AI Terminal |
+| **Dashboard** <br> *(Starter)* | Production-ready SaaS dashboard boilerplate. | — | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/starter) | TanStack Table, Virtual, Sidebar |
+
+
