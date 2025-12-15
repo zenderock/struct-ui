@@ -1,5 +1,5 @@
 {
     "name": "struct-ui-monorepo",
     "private": false,
-    "packageManager": "pnpm@9.0.0"
+    "packageManager": "pnpm@10.25.0"
 }
