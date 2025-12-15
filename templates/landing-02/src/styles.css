@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #06b6d4;
+  /* Cyan 500 */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #030303;
+  color: #d4d4d8;
+  /* zinc-300 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Animation Utilities */
+.animate-on-scroll {
+  opacity: 0;
+  animation-play-state: paused;
+}
+
+.animate-on-scroll.is-visible {
+  animation-play-state: running;
+  opacity: 1;
+  /* Fallback if animation fills are messy */
+}
+
+/* Keyframes */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes beamV {
+  0% {
+    top: -150px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes beamH {
+  0% {
+    left: -150px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes beamHRev {
+  0% {
+    right: -150px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes aura-bar-grow {
+  from {
+    transform: scaleY(0.2);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 4s ease infinite;
+}
+
+.animate-beam-v {
+  animation: beamV 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-beam-h {
+  animation: beamH 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-beam-h-rev {
+  animation: beamHRev 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.aura-animate-bar {
+  transform-origin: bottom;
+  animation: aura-bar-grow 2s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+/* Fonts */
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-mono {
+  font-family: 'Geist Mono', monospace;
+}

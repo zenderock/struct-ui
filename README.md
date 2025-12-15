@@ -9,6 +9,7 @@
 | **Portfolio 01** <br> *(Sentrix)* | Sleek, motion-driven portfolio with AI terminal. | [Demo](https://struct-ui-portfolio-01.vercel.app) | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/portfolio-01) | GSAP, Lenis, AI Terminal |
 | **Dashboard** <br> *(Starter)* | Production-ready SaaS dashboard boilerplate. | — | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/starter) | TanStack Table, Virtual, Sidebar |
 | **Landing 01** <br> *(Cre8XP)* | High-performance, dark-mode landing page with scroll reveals. | [Demo](https://struct-ui-landing-01.vercel.app/) | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/landing-01) | Scroll Animations, Geist Font, Lucide Icons |
+| **Landing 02** <br> *(Kreona)* | AI-powered coding studio landing page with complex motion. | [Demo](https://struct-ui-landing-02.vercel.app/) | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/landing-02) | Beam Animations, Interactive Grid, Motion Reveal |
 
 
 ## Project Definition
