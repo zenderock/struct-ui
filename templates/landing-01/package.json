@@ -4,10 +4,13 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build && tsc --noEmit",
+    "dev": "vite dev --port 3000",
+    "build": "vite build",
     "preview": "vite preview",
-    "start": "node .output/server/index.mjs"
+    "test": "vitest run",
+    "format": "biome format",
+    "lint": "biome lint",
+    "check": "biome check"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
