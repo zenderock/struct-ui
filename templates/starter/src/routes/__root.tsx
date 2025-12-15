@@ -65,7 +65,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<body className="bg-secondary ">
 				<SidebarProvider>
 					<AppSidebar />
-					<SidebarInset>
+					<SidebarInset className="">
 						<div className="flex flex-1 flex-col gap-4 p-4 bg-secondary ">
 							<SidebarTrigger className="md:hidden" />
 							{children}

@@ -1,0 +1,486 @@
+@import "tailwindcss";
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.animate-flow {
+  stroke-dasharray: 10, 10;
+  animation: flow 20s linear infinite;
+}
+
+.animate-flow-fast {
+  stroke-dasharray: 6, 6;
+  animation: flow 10s linear infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.glow-dot {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean UI in code blocks */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glass effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to bottom right, #ffffff 30%, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Chart Animation */
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-dash {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 4s ease-out forwards;
+}
+
+/* Radar Specifics */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Concentric filled circles pulsing + fading out */
+@keyframes centerCirclePulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  10% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  40% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  60% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.center-circle {
+  animation: centerCirclePulse 5s ease-out infinite;
+}
+
+.center-circle--2 {
+  animation-delay: 0.12s;
+}
+
+.center-circle--3 {
+  animation-delay: 0.24s;
+}
+
+/* Rays that appear after the circles fade */
+@keyframes centerRayX {
+
+  0%,
+  45% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes centerRayY {
+
+  0%,
+  45% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.center-ray-horizontal {
+  height: 1px;
+  animation: centerRayX 5s ease-out infinite;
+}
+
+.center-ray-vertical {
+  width: 1px;
+  animation: centerRayY 5s ease-out infinite;
+}
+
+/* Origins so each ray “starts” from the icon center and grows out */
+.center-ray-left {
+  transform-origin: right center;
+}
+
+.center-ray-right {
+  transform-origin: left center;
+}
+
+.center-ray-top {
+  transform-origin: center bottom;
+}
+
+.center-ray-bottom {
+  transform-origin: center top;
+}
+
+/* ================= CUSTOM ANIMATIONS ================= */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes radar-scan {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Glass Dashboard Specifics */
+.glass-surface {
+  background: rgba(10, 15, 30, 0.65);
+  /* Dark semi-transparent base */
+  backdrop-filter: blur(24px);
+  /* Heavy blur for the "frosted" look */
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    /* Subtle border */
+    0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  /* Depth shadow */
+}
+
+/* The glowing top border line */
+.glass-top-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(34, 211, 238, 0.8) 50%, transparent 100%);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+  z-index: 10;
+}
+
+/* Radar Gradients */
+.radar-sweep {
+  background: conic-gradient(from 180deg at 50% 50%,
+      transparent 0deg,
+      transparent 200deg,
+      rgba(6, 182, 212, 0.05) 240deg,
+      rgba(6, 182, 212, 0.4) 360deg);
+}
+
+.mask-radar-bottom {
+  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 85%);
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Base & Reset from original index.tsx */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: #F5F5F5;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #EB3A14;
+  color: white;
+}
+
+/* Custom Cursor */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  .cursor-dot,
+  .cursor-circle {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: exclusion;
+  }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .cursor-circle {
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+
+  body:hover .cursor-circle {
+    opacity: 1;
+  }
+
+  body.hover-active .cursor-circle {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: transparent;
+  }
+}
+
+@media (pointer: coarse) {
+
+  .cursor-dot,
+  .cursor-circle {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto;
+  }
+}
+
+/* Typography & Utils */
+.text-balance {
+  text-wrap: balance;
+}
+
+.magnetic-btn {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Reveal Animations */
+.hero-char {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(20px);
+  animation: revealChar 0.8s cubic-bezier(0.2, 0.65, 0.3, 0.9) forwards;
+}
+
+@keyframes revealChar {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Delays for hero chars */
+.anim-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.anim-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.anim-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.anim-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.anim-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.anim-delay-700 {
+  animation-delay: 0.7s;
+}
+
+/* Wispr-style Glow */
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(235, 58, 20, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Project Cards */
+.project-card .project-img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.5s;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.03);
+}
+
+/* Mobile Fixes */
+.mobile-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .mobile-stack {
+    flex-direction: row;
+  }
+}
+
+/* Hero Fade In - Managed by GSAP */
+/* .hero-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+} */

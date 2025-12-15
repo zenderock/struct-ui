@@ -4,7 +4,7 @@
 
 ## Project Definition
 
-**Struct UI** is an Open Source UI Kit / Boilerplate designed for developers building complex B2B SaaS applications. We prioritize type-safety, headless logic, and performance over generic visual components.
+**Struct UI** is an Open Source UI Kit / Boilerplate designed for developers building complex B2B SaaS applications. We prioritize type-safety, headless logic, and performance.
 
 **Philosophy:** "TanStack First". We leverage the bleeding-edge TanStack ecosystem to provide a premium starting point for UI that gives you control over the logic.
 

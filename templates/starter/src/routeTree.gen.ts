@@ -9,88 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as LeadsRouteImport } from './routes/leads'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PathlessLayoutNestedLayoutRouteImport } from './routes/_pathlessLayout/_nested-layout'
-import { Route as PathlessLayoutNestedLayoutRouteBRouteImport } from './routes/_pathlessLayout/_nested-layout/route-b'
-import { Route as PathlessLayoutNestedLayoutRouteARouteImport } from './routes/_pathlessLayout/_nested-layout/route-a'
 
-const LeadsRoute = LeadsRouteImport.update({
-  id: '/leads',
-  path: '/leads',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PathlessLayoutNestedLayoutRoute =
-  PathlessLayoutNestedLayoutRouteImport.update({
-    id: '/_nested-layout',
-    getParentRoute: () => PathlessLayoutRoute,
-  } as any)
-const PathlessLayoutNestedLayoutRouteBRoute =
-  PathlessLayoutNestedLayoutRouteBRouteImport.update({
-    id: '/route-b',
-    path: '/route-b',
-    getParentRoute: () => PathlessLayoutNestedLayoutRoute,
-  } as any)
-const PathlessLayoutNestedLayoutRouteARoute =
-  PathlessLayoutNestedLayoutRouteARouteImport.update({
-    id: '/route-a',
-    path: '/route-a',
-    getParentRoute: () => PathlessLayoutNestedLayoutRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/leads': typeof LeadsRoute
-  '/route-a': typeof PathlessLayoutNestedLayoutRouteARoute
-  '/route-b': typeof PathlessLayoutNestedLayoutRouteBRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/leads': typeof LeadsRoute
-  '/route-a': typeof PathlessLayoutNestedLayoutRouteARoute
-  '/route-b': typeof PathlessLayoutNestedLayoutRouteBRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/leads': typeof LeadsRoute
-  '/_pathlessLayout/_nested-layout': typeof PathlessLayoutNestedLayoutRouteWithChildren
-  '/_pathlessLayout/_nested-layout/route-a': typeof PathlessLayoutNestedLayoutRouteARoute
-  '/_pathlessLayout/_nested-layout/route-b': typeof PathlessLayoutNestedLayoutRouteBRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/leads' | '/route-a' | '/route-b'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/leads' | '/route-a' | '/route-b'
-  id:
-    | '__root__'
-    | '/'
-    | '/leads'
-    | '/_pathlessLayout/_nested-layout'
-    | '/_pathlessLayout/_nested-layout/route-a'
-    | '/_pathlessLayout/_nested-layout/route-b'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LeadsRoute: typeof LeadsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/leads': {
-      id: '/leads'
-      path: '/leads'
-      fullPath: '/leads'
-      preLoaderRoute: typeof LeadsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -98,33 +48,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_pathlessLayout/_nested-layout': {
-      id: '/_pathlessLayout/_nested-layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof PathlessLayoutNestedLayoutRouteImport
-      parentRoute: typeof PathlessLayoutRoute
-    }
-    '/_pathlessLayout/_nested-layout/route-b': {
-      id: '/_pathlessLayout/_nested-layout/route-b'
-      path: '/route-b'
-      fullPath: '/route-b'
-      preLoaderRoute: typeof PathlessLayoutNestedLayoutRouteBRouteImport
-      parentRoute: typeof PathlessLayoutNestedLayoutRoute
-    }
-    '/_pathlessLayout/_nested-layout/route-a': {
-      id: '/_pathlessLayout/_nested-layout/route-a'
-      path: '/route-a'
-      fullPath: '/route-a'
-      preLoaderRoute: typeof PathlessLayoutNestedLayoutRouteARouteImport
-      parentRoute: typeof PathlessLayoutNestedLayoutRoute
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LeadsRoute: LeadsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

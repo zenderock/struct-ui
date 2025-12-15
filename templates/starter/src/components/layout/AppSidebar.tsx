@@ -189,7 +189,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			}
 			{...props}
 		>
-			<SidebarHeader>
+			<SidebarHeader className="bg-secondary">
 				{/* Header */}
 				<div className="flex items-center gap-2 px-2 py-1">
 					<div className="flex items-center justify-center size-8 rounded-lg bg-black text-white shrink-0">
@@ -248,7 +248,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarHeader>
 
 			{/* Main Content */}
-			<SidebarContent className="px-2 py-4">
+			<SidebarContent className="px-2 py-4 bg-secondary">
 				{/* Menu Section */}
 				<div className="mb-6">
 					{isExpanded && (
@@ -305,7 +305,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarContent>
 
 			{/* Footer */}
-			<SidebarFooter>
+			<SidebarFooter className="bg-secondary">
 				<SidebarMenu>
 					<SidebarMenuItem>
 						<Menu>
