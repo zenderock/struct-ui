@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #626041;
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #626041;
+}
+
+/* Animation Utilities */
+.animate-on-scroll { 
+  opacity: 0; 
+  /* animation-play-state will be controlled by JS */
+}
+.animate-on-scroll.is-visible { 
+  animation-play-state: running;
+}
+
+/* Keyframes defined in global CSS for Tailwind to pick up if needed 
+   or just raw CSS usage as per the user's template */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-30px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateX(0); filter: blur(0px); }
+}
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(30px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateX(0); filter: blur(0px); }
+}
+@keyframes scrollBlur {
+  from { filter: blur(0px); transform: scale(1); }
+  to { filter: blur(20px); transform: scale(1.05); }
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #ffffff, #a3a3a3);
+}

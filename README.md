@@ -2,6 +2,15 @@
 
 > Production-ready, high-density data layouts (Dashboards, Settings, Auth) specifically for the TanStack ecosystem.
 
+## Templates Catalogue
+
+| Template | Description | Live Demo | Source Code | Key Features |
+| :--- | :--- | :---: | :---: | :--- |
+| **Portfolio 01** <br> *(Sentrix)* | Sleek, motion-driven portfolio with AI terminal. | [Demo](https://struct-ui-portfolio-01.vercel.app) | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/portfolio-01) | GSAP, Lenis, AI Terminal |
+| **Dashboard** <br> *(Starter)* | Production-ready SaaS dashboard boilerplate. | — | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/starter) | TanStack Table, Virtual, Sidebar |
+| **Landing 01** <br> *(Cre8XP)* | High-performance, dark-mode landing page with scroll reveals. | — | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/landing-01) | Scroll Animations, Geist Font, Lucide Icons |
+
+
 ## Project Definition
 
 **Struct UI** is an Open Source UI Kit / Boilerplate designed for developers building complex B2B SaaS applications. We prioritize type-safety, headless logic, and performance.
@@ -48,12 +57,4 @@ To run the starter template:
 cd templates/starter
 pnpm dev
 ```
-
-## Templates Catalogue
-
-| Template | Description | Live Demo | Source Code | Key Features |
-| :--- | :--- | :---: | :---: | :--- |
-| **Portfolio 01** <br> *(Sentrix)* | Sleek, motion-driven portfolio with AI terminal. | [Demo](https://struct-ui-portfolio-01.vercel.app) | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/portfolio-01) | GSAP, Lenis, AI Terminal |
-| **Dashboard** <br> *(Starter)* | Production-ready SaaS dashboard boilerplate. | — | [Source](https://github.com/zenderock/struct-ui/tree/main/templates/starter) | TanStack Table, Virtual, Sidebar |
-
 

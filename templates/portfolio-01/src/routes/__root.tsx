@@ -16,7 +16,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
       },
       {
-        title: 'Kyriakos Michael — Senior Software Engineer',
+        title: 'Template portfolio',
       },
     ],
     links: [
